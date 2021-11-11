@@ -27,10 +27,9 @@ export const LoadPage: FC<LoadPageProps> = function ({ onLoad }) {
   const params = qs.parse(document.location.search, {ignoreQueryPrefix: true})
   const uid = params.uid
   // const host = "https://erinilis.cn:7711"
-  const host = "http://119.23.77.107:8082"
+  const host = "http://119.23.77.107:8021"
   if (uid) {
-  //  fetch(`${host}/genshin/gachalog/xlsx/${uid}`)
-    fetch(`${host}/s/PgSNbHcAstKWc29/download?path=%2F&files=${uid}.xlsx`)
+    fetch(`${host}/genshin/gachalog/xlsx/${uid}`)
       .then(response => response.arrayBuffer())
       .then(data => {
         setLoadingTip('xlsx解析文件加载中...');
